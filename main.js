@@ -81,13 +81,16 @@ function checkLength(){
     } else if(percent > 200) {
         progressbar.classList.add("bg-danger");
         progressbar.classList.remove("bg-success");
-    } else if (percent  )
+    } 
     console.log(percent); 
 }
 
-function validEmail(email) {
-    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
-}   
-
-console.log("this is Trong");
+//check user email
+function checkEmail() {
+    let pattern = new RegExp(/^[+a-zA-Z1-9._-] + @[a-zA-Z1-9.-]+\.[a-zA-Z]{2,4}$/i);
+    if (pattern.test(email.value)) {
+        console.log("true, valid email");
+    } else {
+        console.log("false, valid email");
+    }
+}
